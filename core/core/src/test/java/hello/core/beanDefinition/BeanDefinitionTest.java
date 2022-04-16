@@ -9,12 +9,12 @@ import org.springframework.test.context.event.annotation.AfterTestClass;
 import org.springframework.context.support.GenericXmlApplicationContext;
 public class BeanDefinitionTest {
 
-    //AnnotationConfigApplicationContext ac =new AnnotationConfigApplicationContext(AppConfig.class);
-    GenericXmlApplicationContext ac = new
-            GenericXmlApplicationContext("appConfig.xml");
+    AnnotationConfigApplicationContext ac =new AnnotationConfigApplicationContext(AppConfig.class);
+//    GenericXmlApplicationContext ac = new
+//            GenericXmlApplicationContext("appConfig.xml");
     @Test
     @DisplayName("빈 설정 메타정보 확인")
-    void findApplicationBean(){
+     void findApplicationBean(){
         String[] beanDefinitionNames = ac.getBeanDefinitionNames();
         for (String beanDefinitionName : beanDefinitionNames) {
             BeanDefinition beanDefinition = ac.getBeanDefinition(beanDefinitionName);
